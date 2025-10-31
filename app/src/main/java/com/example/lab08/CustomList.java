@@ -1,5 +1,9 @@
 package com.example.lab08;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +30,22 @@ public class CustomList {
         return cities.contains(city);
     }
 
-    public int getCount() {
-        return cities.size();
+    @Test
+    public void testCountCities() {
+        CustomList list = new CustomList();
+
+        // Empty list should have count 0
+        assertEquals(0, list.countCities());
+
+        // Add cities and verify count
+        list.addCity(new City("Toronto", "ON"));
+        assertEquals(1, list.countCities());
+
+        list.addCity(new City("Montreal", "QC"));
+        assertEquals(2, list.countCities());
+
+        list.addCity(new City("Ottawa", "ON"));
+        assertEquals(3, list.countCities());
     }
 
     /**
