@@ -30,6 +30,14 @@ public class CustomList {
         return cities.contains(city);
     }
 
+    /**
+     * Count the number of cities in the list
+     * @return The number of cities
+     */
+    public int countCities() {
+        return cities.size();
+    }
+
     @Test
     public void testCountCities() {
         CustomList list = new CustomList();
@@ -54,5 +62,9 @@ public class CustomList {
      */
     public void deleteCity(City city) {
         cities.remove(city);
+    }
+
+    public int getCount() {
+        return cities.size();
     }
 }
