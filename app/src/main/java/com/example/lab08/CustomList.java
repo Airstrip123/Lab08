@@ -29,4 +29,12 @@ public class CustomList {
     public int getCount() {
         return cities.size();
     }
+
+    /**
+     * Remove a city from the list
+     * @param city The city to remove
+     */
+    public void deleteCity(City city) {
+        cities.remove(city);
+    }
 }
